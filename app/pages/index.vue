@@ -1,12 +1,11 @@
 <script setup lang="ts">
 const pages = [
-  { title: '文件上传', description: '体验大文件分片与断点续传', to: '/file-upload', icon: '01' },
-  { title: '屏幕录制', description: '录制屏幕、声音并下载视频', to: '/video-screen', icon: '02' },
-  { title: '截图编辑', description: '截图并添加框选、箭头、文字与涂鸦', to: '/screenshot-editor', icon: '03' },
-  { title: '音视频剪辑', description: '剪切、标注、混音并导出 MP4', to: '/video-editor', icon: '04' },
-  { title: 'SVG 转 PNG', description: '将 SVG 矢量图转换为高分辨率 PNG 图片', to: '/svg-to-png', icon: '05' },
-  { title: '图片拼接', description: '多张部分重叠的图片拼成一张完整大图', to: '/image-stitch', icon: '06' },
-  { title: '视频人形轮廓检测', description: '检测视频中的人并用虚线描边生成新视频', to: '/video-contour', icon: '07' },
+  { title: '屏幕录制', description: '录制屏幕、声音并下载视频', to: '/video-screen', icon: '01' },
+  { title: '截图编辑', description: '截图并添加框选、箭头、文字与涂鸦', to: '/screenshot-editor', icon: '02' },
+  { title: '音视频剪辑', description: '剪切、标注、混音并导出 MP4', to: '/video-editor', icon: '03' },
+  { title: 'SVG 转 PNG', description: '将 SVG 矢量图转换为高分辨率 PNG 图片', to: '/svg-to-png', icon: '04' },
+  { title: '图片拼接', description: '多张部分重叠的图片拼成一张完整大图', to: '/image-stitch', icon: '05' },
+  { title: '视频人形轮廓检测', description: '检测视频中的人并用虚线描边生成新视频', to: '/video-contour', icon: '06' },
 ]
 </script>
 

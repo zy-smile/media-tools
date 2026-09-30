@@ -16,7 +16,7 @@ function ensureCv() {
   if (!cvReadyPromise) {
     cvReadyPromise = (async () => {
       try {
-        importScripts('/vendor/opencv.js')
+        importScripts('../vendor/opencv.js')
       } catch (err) {
         throw new Error('OpenCV 内核加载失败:' + (err && err.message))
       }

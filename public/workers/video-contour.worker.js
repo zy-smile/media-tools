@@ -4,7 +4,8 @@
    注:该构建 dnn 的 buffer 加载重载不可用,模型必须先写入 wasm 虚拟文件系统
    再按路径加载;PP-HumanSeg(tf2onnx)输出为 NHWC 交错两通道,奇数位为“人”。 */
 
-const MODEL_URL = '/vendor/models/pp_humanseg.onnx'
+/* 相对 worker 脚本自身位置解析，兼容 GitHub Pages 子路径部署 */
+const MODEL_URL = '../vendor/models/pp_humanseg.onnx'
 const INPUT_SIZE = 192
 const MAX_CONTOURS = 12
 const MIN_AREA_RATIO = 0.0006 /* 相对帧面积的最小轮廓阈值 */
@@ -16,7 +17,7 @@ function ensureCv() {
   if (!cvReady) {
     cvReady = (async () => {
       try {
-        importScripts('/vendor/opencv.js')
+        importScripts('../vendor/opencv.js')
       } catch (err) {
         throw new Error('OpenCV 内核加载失败:' + (err && err.message))
       }

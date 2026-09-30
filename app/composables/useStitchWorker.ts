@@ -54,10 +54,12 @@ export function useStitchWorker() {
 
   const busy = ref(false)
   const progress = ref<StitchProgress>({ percent: 0, message: '' })
+  /* 在 setup 上下文中捕获，ensureWorker 可能在事件回调中脱离上下文执行 */
+  const baseURL = useRuntimeConfig().app.baseURL
 
   function ensureWorker(): Worker {
     if (worker) return worker
-    worker = new Worker('/workers/stitch.worker.js')
+    worker = new Worker(`${baseURL}workers/stitch.worker.js`)
     worker.onmessage = (event: MessageEvent) => {
       const msg = event.data
       const request = pending

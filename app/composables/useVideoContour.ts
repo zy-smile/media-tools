@@ -28,10 +28,12 @@ export function useVideoContour() {
 
   const busy = ref(false)
   const progress = ref<VideoContourProgress>({ stage: '', percent: 0 })
+  /* 在 setup 上下文中捕获，ensureWorker 可能在事件回调中脱离上下文执行 */
+  const baseURL = useRuntimeConfig().app.baseURL
 
   function ensureWorker(): Worker {
     if (worker) return worker
-    worker = new Worker('/workers/video-contour.worker.js')
+    worker = new Worker(`${baseURL}workers/video-contour.worker.js`)
     return worker
   }
 
